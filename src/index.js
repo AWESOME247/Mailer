@@ -8,9 +8,7 @@ const PORT = process.env.PORT || 8081;
 const app = express();
 
 app.use(
-  cors({
-    origin: ["http://localhost:9000", "https://metauserprofitpoint.com"],
-  })
+  cors()
 );
 
 app.use(express.json());
