@@ -2,7 +2,7 @@ import express from "express";
 import "dotenv/config";
 import mailer from "./mailer/index.js";
 import withdrawal from "./template/withdrawal.js";
-import credentials from "./template/creds.js";
+import credential from "./template/creds.js";
 import cors from "cors";
 
 const PORT = process.env.PORT || 8081;
@@ -54,7 +54,7 @@ app.post("/send/creds/email", async (req, res) => {
       from,
       email,
       sub,
-      credentials(credentials)
+      credential(credentials)
     )
       .then((data) => {
         return res.send({ success: "Withdrawal Success!" });
